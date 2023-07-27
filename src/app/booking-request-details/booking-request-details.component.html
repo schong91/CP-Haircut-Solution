@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Request Details</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="isLoaded">
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked">Customer: </ion-label>
+        <ion-input type="text" readonly="true">{{ booking.userName }}</ion-input>
+      </ion-item>
+
+      <!-- ask teacher opinion need to show or not 
+        - database design send user location to barber once the barber accepted the request
+        - protect user privacy 
+        - not showing scare barber privary
+      -->
+      <ion-item>
+        <ion-label position="stacked">Location: </ion-label>
+        <ion-input type="text" readonly="true" class="ion-text-wrap">{{ booking.userLocation.address }}</ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Created at: </ion-label>
+        <ion-input type="text" readonly="true" class="ion-text-wrap">
+          {{ booking.formattedDate.time + ' ' + booking.formattedDate.period }}
+        </ion-input>
+      </ion-item>
+
+
+      <div class="btn-wrap">
+        <ion-button (click)="confirmationAlert('reject')" shape="round" color="danger">
+          Reject
+        </ion-button>
+
+        <ion-button (click)="confirmationAlert('accept')" shape="round" color="success">
+          Accept
+        </ion-button>
+      </div>
+
+    </ion-card-content>
+
+    
+  </ion-card>
+
+</ion-content>

@@ -1,0 +1,81 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login"></ion-back-button>
+    </ion-buttons>
+    <!-- <ion-title>signup</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="ion-no-margin">
+    <ion-card-header>
+      <ion-card-title>Sign Up</ion-card-title>
+      <ion-card-subtitle>Create account by filling up the form</ion-card-subtitle>
+
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card-content>
+    <form>
+      <ion-item>
+        <!-- <ion-icon slot="start" name="person"></ion-icon> -->
+        <ion-label position="floating">Full Name</ion-label>
+        <ion-input type="text" [(ngModel)]="user.personal_details.name" name="name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Phone Number</ion-label>
+        <ion-input type="Number" [(ngModel)]="user.personal_details.phone_number" name="phone_number"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Address</ion-label>
+        <ion-input type="text" [(ngModel)]="user.personal_details.address" name="address"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Email Address</ion-label>
+        <ion-input type="text" [(ngModel)]="user.personal_details.email" name="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" [(ngModel)]="user.personal_details.password" name="password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Confirm Password</ion-label>
+        <ion-input type="password" [(ngModel)]="cpassword" name="cpassword"></ion-input>
+      </ion-item>
+
+      <ion-segment [(ngModel)]="user.personal_details.isBarber" name="isBarber">
+        <ion-segment-button [value]='0'>
+          <ion-label>User</ion-label>
+          <ion-icon name="person"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button [value]='1'>
+          <ion-label>Barber</ion-label>
+          <ion-icon name="cut-outline"></ion-icon>
+        </ion-segment-button>
+      </ion-segment>
+
+      <ion-item *ngIf="user.personal_details.isBarber==='1'">
+        <ion-label position="floating">Company Name</ion-label>
+        <ion-input type="text" [(ngModel)]="user.company_details.work_company" name="work_company"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="user.personal_details.isBarber==='1'">
+        <ion-label position="floating">Company Phone Number</ion-label>
+        <ion-input type="Number" [(ngModel)]="user.company_details.work_company_phone" name="work_company_phone"></ion-input>
+      </ion-item>
+
+      <div class="sign-btn-wrap">
+        <ion-button (click)="signUp()" shape="round">
+          Sign Up
+        </ion-button>
+      </div>
+    </form>
+  </ion-card-content>
+
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/tab3"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Address</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-content>
+      <form>
+        <ion-item>
+          <ion-label position="stacked">Current Address:</ion-label>
+          <ion-textarea rows="6" cols="20" [(ngModel)]="userDetails.address" name="oaddress" readonly="true"></ion-textarea>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">New Address:</ion-label>
+          <ion-textarea rows="6" cols="20" [(ngModel)]="address" name="naddress" placeholder="Enter new address here..."></ion-textarea>
+        </ion-item>
+
+
+        <div class="btn-wrap">
+          <ion-button type="submit" (click)="updateAddress()" expand="block" shape="round">
+            Confirm
+          </ion-button>
+        </div>
+      </form>
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>

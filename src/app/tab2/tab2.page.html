@@ -1,0 +1,77 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      {{ (isBarber)? 'Booking Request' : 'Find Nearest Barber' }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" *ngIf="isLoaded">
+  <ion-fab *ngIf="isBarber && barberAvailable" horizontal="end" vertical="top" slot="fixed" edge>
+    <ion-fab-button (click)="updateLocationManual()" [disabled]="!canManualUpdate">
+      <ion-icon name="locate"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <div class="center" *ngIf="isBarber && (!barberAvailable)">
+    <p class="notification">
+      Please turn on barber availability to broadcast location before receive booking request.
+    </p>
+  </div>
+
+  <div class="center" *ngIf="!isBarber && nearestBarberList?.length === 0">
+    <p class="notification">
+      No available barber closest to your location.
+      Pull down to refresh...
+    </p>
+  </div>
+
+  <div class="center" *ngIf="isBarber && barberAvailable && bookingRequest?.length === 0">
+    <p class="notification">
+      No booking request pending for your response.
+      Pull down to refresh...
+    </p>
+  </div>
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="chevron-down-circle-outline" pullingText="Pull to refresh"
+      refreshingSpinner="bubbles" refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list *ngIf="!isBarber && nearestBarberList?.length > 0">
+    <!-- <ion-item button (click)="barberDetails(barber.id)" *ngFor="let barber of (barbers | async)"> -->
+    <ion-item button (click)="barberDetails(barber.id)" *ngFor="let barber of nearestBarberList">
+      <ion-label>
+        <h2 class="capitalize">{{ barber.personal_details.name }}</h2>
+        <p>Distance: {{ barber.distance + ' km' }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="isBarber && bookingRequest?.length > 0">
+    <ion-card (click)="bookingRequestDetails(booking)" *ngFor="let booking of bookingRequest">
+      <ion-card-content>
+        <ion-card-header>
+          <ion-item class="ion-no-padding">
+            <ion-card-subtitle>
+              Date: {{ booking.formattedDate.date }}
+            </ion-card-subtitle>
+          </ion-item>
+        </ion-card-header>
+
+        <ion-item class="ion-no-padding details">
+          <ion-label class="fixedLabel">Customer :</ion-label>
+          <ion-input type="text" readonly="true">{{ booking.userName }}</ion-input>
+        </ion-item>
+
+        <ion-item lines="none" class="ion-no-padding details">
+          <ion-label class="fixedLabel">Request at:</ion-label>
+          <ion-input type="text" readonly="true">{{ booking.formattedDate.time + ' ' + booking.formattedDate.period }}
+          </ion-input>
+        </ion-item>
+
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>

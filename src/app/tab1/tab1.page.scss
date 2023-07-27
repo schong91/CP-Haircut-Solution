@@ -1,0 +1,70 @@
+ion-card {
+    height: 25% !important;
+}
+
+ion-card-header {
+    padding: 0px !important;
+    padding-bottom: 15px;
+}
+
+ion-card-subtitle {
+    h2 {
+        font-size: 17px;
+        font-weight: bold;
+    }
+}
+
+.details {
+    font-size: 16px;
+}
+
+.fixedLabel {
+    min-width: 30% !important;
+    max-width: 30% !important;
+}
+
+.center {
+    margin: 50% 5%;
+    border: 3px solid green;
+    padding: 10px;
+}
+
+.filter {
+    font-size: 15px;
+}
+
+ion-select::part(text) {
+  flex: 0 0 auto;
+  font-size: 15px;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+$blue:  blue;
+$green: #009900;
+$red:   #f53d3d;
+$orange: orange;
+$grey: #6666;
+
+
+.accepted {
+    color: blue;
+}
+
+.rejected {
+    color: red;
+}
+
+// .cancelled {
+//     color: $grey
+// }
+
+.requesting {
+    color: $orange;
+}
+
+.completed {
+    color: $green;
+}
