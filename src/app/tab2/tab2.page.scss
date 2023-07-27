@@ -1,0 +1,41 @@
+.center {
+    margin: 50% 5%;
+    border: 3px solid green;
+    padding: 10px;
+  }
+
+.notification {
+    font-size: 15px;
+    font-weight: bold;
+    color: #666;
+    text-align: center;
+  }
+
+ion-card {
+    height: 25% !important;
+}
+
+ion-card-header {
+    padding: 0px !important;
+    padding-bottom: 15px;
+}
+
+ion-card-subtitle {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.details {
+    font-size: 16px;
+}
+
+.fixedLabel {
+  min-width: 30% !important;
+  max-width: 30% !important;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+

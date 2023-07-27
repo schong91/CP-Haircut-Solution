@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "haircut",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

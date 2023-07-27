@@ -1,0 +1,61 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Booking History
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" *ngIf="isLoaded">
+  <ion-item lines="full">
+    <ion-label class="filter">Show bookings of:</ion-label>
+    <ion-select [(ngModel)]="filterOption" (ionChange)="filter()" [interfaceOptions]='{ backdropDismiss: false }'>
+      <ion-select-option value="recent">Recent</ion-select-option>
+      <ion-select-option value="all">All</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="chevron-down-circle-outline" pullingText="Pull to refresh"
+      refreshingSpinner="bubbles" refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <div class="center" *ngIf="bookingHistory?.length === 0">
+    <p class="notification">
+      No any available barber booking history.
+    </p>
+  </div>
+
+  <ion-list *ngIf="bookingHistory?.length > 0">
+    <!-- <ion-card [routerLink]="['/booking-details', booking.id]" *ngFor="let booking of (bookings | async)"> -->
+    <ion-card (click)="goBookingDetails(booking.bid)" *ngFor="let booking of filteredBookingHistory">
+      <ion-card-content>
+        <ion-card-header>
+          <ion-item class="ion-no-padding">
+            <ion-card-subtitle>
+              <h2>Date: {{ booking.formattedDate.date  }} <small>({{ booking.formattedDate.time + booking.formattedDate.period }})</small></h2>
+            </ion-card-subtitle>
+          </ion-item>
+        </ion-card-header>
+
+        <ion-item *ngIf="isBarber" class="ion-no-padding details">
+          <ion-label class="fixedLabel">Customer : </ion-label>
+          <ion-input type="text" readonly="true" class="capitalize">{{ booking.userName }}</ion-input>
+        </ion-item>
+
+        <ion-item *ngIf="!isBarber" class="ion-no-padding details">
+          <ion-label class="fixedLabel">Barber : </ion-label>
+          <ion-input type="text" readonly="true" class="capitalize">{{ booking.barberName }}</ion-input>
+        </ion-item>
+
+        <ion-item lines="none" class="ion-no-padding details">
+          <ion-label class="fixedLabel">Status : </ion-label>
+          <ion-input type="text" readonly="true" class="capitalize" [class]="booking.status">{{ booking.status }}</ion-input>
+        </ion-item>
+
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+</ion-content>

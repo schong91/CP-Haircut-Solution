@@ -1,0 +1,43 @@
+.btn-wrap {
+    text-align: center;
+    padding-top: 20px;
+    margin-inline: 16px;
+    position: relative;
+}
+
+
+ion-label {
+    font-weight: bold;
+    // font-size: 18px;
+}
+
+.title {
+    font-size: 15px;
+}
+
+ion-input {
+    font-size: 15px;
+    // color: #000;
+    margin-top: 5px;
+}
+
+ion-item {
+    padding: 10px 0px;
+}
+
+ion-card-subtitle {
+    font-size: 15px;
+}
+
+ion-card-header {
+    background-color: #d7d8da;
+}
+
+small {
+    font-size: 14px;
+    color: #666;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
