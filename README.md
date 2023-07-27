@@ -32,32 +32,33 @@ Algorithm: Haversine (for calculating distances between coordinates)
 # Demo
 1. Find Nearest Barber
 
-![find_nearest_barber](https://github.com/schong91/FYP-Haircut-Solution/assets/135227002/99096a97-4bb7-45ed-9944-69b1dd79fab1)
+![find_nearest_barber](https://github.com/schong91/CP-Haircut-Solution/assets/135227002/540cf7dd-2dfc-4fe1-8619-5af6b45ceee4)
 
 2. Send booking to barber
    
-![booking_barber](https://github.com/schong91/FYP-Haircut-Solution/assets/135227002/1086ff89-8331-436e-b787-4fd1543a536f)
+![booking_barber](https://github.com/schong91/CP-Haircut-Solution/assets/135227002/53d11525-f0fb-4023-9780-9e6f1c4bfb22)
 
 3. Barber receive and respond the booking request
 
-![barber_receive_respond_request](https://github.com/schong91/FYP-Haircut-Solution/assets/135227002/98d4fdbd-f78a-493f-b81e-7dfe37353325)
+![barber_receive_respond_request](https://github.com/schong91/CP-Haircut-Solution/assets/135227002/258cbe21-a442-4900-98a0-21c99f149b49)
 
 # User Interface
 ### Both user and barber side
 |Login|User Settings|Booking History|
 |---|---|---|
-|![image](https://github.com/schong91/FYP-Haircut-Solution/assets/135227002/cf6b432a-4fb9-4ec3-9bcf-413562c03370)|![image](https://github.com/schong91/FYP-Haircut-Solution/assets/135227002/4d031227-01d6-41d2-abc6-5242a3846134)|![image](https://github.com/schong91/FYP-Haircut-Solution/assets/135227002/d3a91b0b-5072-43b1-9330-c3a675994636)|
+|![C-login](https://github.com/schong91/CP-Haircut-Solution/assets/135227002/b6514a26-dea2-4b85-a67f-ad9b41af41f5)|![C-user-profile](https://github.com/schong91/CP-Haircut-Solution/assets/135227002/08e1d51d-b545-4554-bc19-c0835ca59b48)|![C-booking-history](https://github.com/schong91/CP-Haircut-Solution/assets/135227002/424f6eb4-a7d6-478b-983a-4b88e80b614e)|
 
 ### User Side
 |Find Nearest Barber|Find Nearest Barber|Barber Details|Booking Details|
 |---|---|---|---|
-|![image](https://github.com/schong91/FYP-Haircut-Solution/assets/135227002/87b4e480-92f1-45fe-a160-6b8b17e31c19)|![image](https://github.com/schong91/FYP-Haircut-Solution/assets/135227002/038c53fc-edfa-4b23-bfb1-fa67f579a37d)|![image](https://github.com/schong91/FYP-Haircut-Solution/assets/135227002/b59ac5e3-47d3-444b-a0fc-3532d28b2980)|![image](https://github.com/schong91/FYP-Haircut-Solution/assets/135227002/5eb2be84-7899-46bd-b5c0-d961e7da5392)|
-
+|![U-find-nearest-barber](https://github.com/schong91/CP-Haircut-Solution/assets/135227002/c3065f54-7a25-47f9-a8c6-289e7014278a)|![U-find-nearest-barber-1](https://github.com/schong91/CP-Haircut-Solution/assets/135227002/2e9d1639-29be-4c57-80f2-08aa39cd80aa)|![U-barber-details](https://github.com/schong91/CP-Haircut-Solution/assets/135227002/45ed26d5-6fab-4c76-ad6b-6a4c9cd66d2b)|![U-booking-details](https://github.com/schong91/CP-Haircut-Solution/assets/135227002/1144def5-8897-49e3-8dc8-a8c49011b256)|
 
 ### Barber Side
 |Booking Request|Booking Request|Booking Details|
 |---|---|---|
-|![image](https://github.com/schong91/FYP-Haircut-Solution/assets/135227002/6bae0ee3-960e-41a9-98f1-d232cc44705b)|![image](https://github.com/schong91/FYP-Haircut-Solution/assets/135227002/6823a125-f18b-4ec2-8cf0-0004dc3b7bc4)|![image](https://github.com/schong91/FYP-Haircut-Solution/assets/135227002/c8279576-5a41-4489-8832-e994e6ff0be9)|
+|![B-booking-request-1](https://github.com/schong91/CP-Haircut-Solution/assets/135227002/b5b05c4e-46f8-4d5e-bfe9-0eefdff0ae38)|![B-booking-request](https://github.com/schong91/CP-Haircut-Solution/assets/135227002/6dc077a2-aac2-4457-bca7-11194404a266)|![B-booking-details](https://github.com/schong91/CP-Haircut-Solution/assets/135227002/2871bb2d-d39b-41ae-beb7-8ab8e6c6c352)|
+
+
 
 
 
