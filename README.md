@@ -36,7 +36,7 @@ Algorithm: Haversine (for calculating distances between coordinates)
 
 2. Send booking to barber
    
-![booking_barber](https://github.com/schong91/CP-Haircut-Solution/assets/135227002/53d11525-f0fb-4023-9780-9e6f1c4bfb22)
+![U-booking-barber](https://github.com/schong91/CP-Haircut-Solution/assets/135227002/98db9119-b37b-4497-b917-3914272ae267)
 
 3. Barber receive and respond the booking request
 
